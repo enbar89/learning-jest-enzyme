@@ -9,7 +9,7 @@ class App extends Component
     {
         return <div className="src-app--container">
 
-            <h1>Hello, World!</h1>
+            <h1>Hello World</h1>
 
         </div>;
     }

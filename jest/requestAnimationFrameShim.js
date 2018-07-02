@@ -1,0 +1,1 @@
+global.requestAnimationFrame = callback => callback();
