@@ -24,10 +24,10 @@ const setup = (props = {}, state = null) =>
 
 describe('ClickCounter is instantiated', () =>
 {
+    const wrapper = setup();
+
     test('renders without error', () =>
     {
-        const wrapper = setup();
-
         const clickCounterComponent = findByTestAttr(wrapper, 'component-click-counter');
 
         expect(clickCounterComponent.length).toBe(1);
@@ -35,8 +35,6 @@ describe('ClickCounter is instantiated', () =>
 
     test('renders increment button', () =>
     {
-        const wrapper = setup();
-
         const button = findByTestAttr(wrapper, 'increment-button');
 
         expect(button.length).toBe(1);
@@ -44,8 +42,6 @@ describe('ClickCounter is instantiated', () =>
 
     test('renders decrement button', () =>
     {
-        const wrapper = setup();
-
         const button = findByTestAttr(wrapper, 'decrement-button');
 
         expect(button.length).toBe(1);
@@ -53,8 +49,6 @@ describe('ClickCounter is instantiated', () =>
 
     test('renders counter display', () =>
     {
-        const wrapper = setup();
-
         const counterDisplay = findByTestAttr(wrapper, 'counter-display');
 
         expect(counterDisplay.length).toBe(1);
@@ -62,8 +56,6 @@ describe('ClickCounter is instantiated', () =>
 
     test('counter starts at 0', () =>
     {
-        const wrapper = setup();
-
         const initialCounterState = wrapper.state('counter');
 
         expect(initialCounterState).toBe(0);
