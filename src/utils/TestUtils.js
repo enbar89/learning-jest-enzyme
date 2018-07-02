@@ -26,9 +26,10 @@ export const findByClassName = (wrapper, val) =>
 
 /**
  * Checks PropTypes of shallow wrapped component instance and expects them to conform to declared types.
- * @param {ShallowWrapper} component - Shallow wrapped component instance.
+ * @function
+ * @param {function} component - Shallow wrapped component instance.
  * @param {object} conformingProps - Props which are expected to match declared prop types for component.
- * @yields
+ * @yields {jest expect} - Jest expect block to determine the existence of a prop error.
  */
 export const checkProps = (component, conformingProps) =>
 {
