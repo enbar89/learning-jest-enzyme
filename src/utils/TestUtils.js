@@ -1,3 +1,5 @@
+import checkPropTypes from 'check-prop-types';
+
 /**
  * Returns ShallowWrapper containing node(s) with the given data-test value.
  * @function
@@ -20,4 +22,22 @@ export const findByTestAttr = (wrapper, val) =>
 export const findByClassName = (wrapper, val) =>
 {
     return wrapper.find(val);
+};
+
+/**
+ * Checks PropTypes of shallow wrapped component instance and expects them to conform to declared types.
+ * @param {ShallowWrapper} component - Shallow wrapped component instance.
+ * @param {object} conformingProps - Props which are expected to match declared prop types for component.
+ * @yields
+ */
+export const checkProps = (component, conformingProps) =>
+{
+    const propError = checkPropTypes(
+        component.propTypes,
+        conformingProps,
+        'prop',
+        component.name
+    );
+
+    expect(propError).toBeUndefined();
 };

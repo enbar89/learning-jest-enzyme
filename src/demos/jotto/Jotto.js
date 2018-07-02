@@ -6,6 +6,6 @@ export default class Jotto extends Component
 {
     render()
     {
-        return <div>Jotto</div>;
+        return <div data-test="component-jotto">Jotto</div>;
     }
 }
