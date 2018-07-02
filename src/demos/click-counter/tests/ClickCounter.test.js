@@ -1,6 +1,7 @@
 import React from 'react';
 import Enzyme, { shallow } from 'enzyme';
 import EnzymeAdapter from 'enzyme-adapter-react-16';
+import { findByTestAttr, findByClassName } from '../../../utils/TestUtils';
 import ClickCounter from '../ClickCounter';
 
 Enzyme.configure({ adapter: new EnzymeAdapter() });
@@ -19,30 +20,6 @@ const setup = (props = {}, state = null) =>
     if(state) wrapper.setState(state);
 
     return wrapper;
-};
-
-/**
- * Returns ShallowWrapper containing node(s) with the given data-test value.
- * @function
- * @param {ShallowWrapper} wrapper - Enzyme shallow wrapper to search within.
- * @param {string} val - Value of data-test attribute for search.
- * @returns {ShallowWrapper}
- */
-const findByTestAttr = (wrapper, val) =>
-{
-    return wrapper.find(`[data-test="${val}"]`);
-};
-
-/**
- * Returns ShallowWrapper containing node(s) with the given CSS class name.
- * @function
- * @param {ShallowWrapper} wrapper - Enzyme shallow wrapper to search within.
- * @param {string} val - Value of CSS class name for search.
- * @returns {ShallowWrapper}
- */
-const findByClassName = (wrapper, val) =>
-{
-    return wrapper.find(val);
 };
 
 describe('ClickCounter is instantiated', () =>
