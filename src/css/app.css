@@ -4,3 +4,22 @@
 
     font-family: Arial, Helvetica, sans-serif;
 }
+
+.src-app--route-links
+{
+    width: 100%;
+
+    margin-bottom: 20px;
+}
+
+.src-app--route-links a
+{
+    display: inline-block;
+
+    text-decoration: none;
+}
+
+.src-app--route-links a:not(:last-child)
+{
+    margin-right: 20px;
+}
